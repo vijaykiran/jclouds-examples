@@ -19,7 +19,7 @@
     (slurp (str (System/getProperty "user.home") "/.ssh/id_rsa") :encoding "utf-8")))
 
 (defn options [login]
-  (-> (TemplateOptions$Builder/overrideCredentialsWith login)
+  (-> (TemplateOptions$Builder/overrideLoginCredentials login)
     (.runAsRoot false)
     (.wrapInInitScript false)))
 
